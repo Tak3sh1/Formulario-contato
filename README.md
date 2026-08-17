@@ -32,8 +32,8 @@ Este é um formulário de cadastro moderno e responsivo desenvolvido para meu po
 
 ## 📸 Preview
 
-<img width="915" height="485" alt="form2" src="https://github.com/user-attachments/assets/a4cd0293-082e-4e7d-86c8-b3aa3a607c9e" />
 <img width="919" height="489" alt="form" src="https://github.com/user-attachments/assets/44a34840-c415-4e8c-8304-c082805a1e52" />
+<img width="915" height="485" alt="form2" src="https://github.com/user-attachments/assets/a4cd0293-082e-4e7d-86c8-b3aa3a607c9e" />
 
 
 ## 🎨 Design Principles
