@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato | Meu Site</title>
+    
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px 45px;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .form-header .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 32px;
+            color: white;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-header h2 {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .form-header p {
+            color: #718096;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #2d3748;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 15px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            background: white;
+        }
+
+        .form-control-sm-custom {
+            max-width: 120px;
+        }
+
+        .form-check {
+            padding-left: 30px;
+            margin-bottom: 8px;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-left: -30px;
+            margin-top: 2px;
+            border: 2px solid #cbd5e0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+
+        .form-check-input:focus {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+        }
+
+        .form-check-label {
+            font-size: 14px;
+            color: #2d3748;
+            cursor: pointer;
+        }
+
+        .radio-group {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .radio-group:focus-within {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .radio-group .form-check {
+            margin-bottom: 4px;
+        }
+
+        .radio-group .form-check:last-child {
+            margin-bottom: 0;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.45);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        .btn-submit i {
+            margin-right: 8px;
+        }
+
+        .divider {
+            border-top: 2px dashed #e2e8f0;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 576px) {
+            .form-container {
+                padding: 25px 20px;
+            }
+
+            .form-header h2 {
+                font-size: 22px;
+            }
+
+            .form-control-sm-custom {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <div class="icon-circle">
+                <i class="bi bi-person-plus"></i>
+            </div>
+            <h2>Cadastro de Usuário</h2>
+            <p>Preencha os dados abaixo para receber nossas novidades</p>
+        </div>
+
+        <form method="GET">
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="usuario" class="form-label">
+                        <i class="bi bi-person me-1"></i>Usuário
+                    </label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" 
+                           placeholder="Digite seu usuário" maxlength="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="senha" class="form-label">
+                        <i class="bi bi-lock me-1"></i>Senha
+                    </label>
+                    <input type="password" class="form-control" id="senha" name="senha" 
+                           placeholder="Máx. 8 caracteres" maxlength="8" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Preferências</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="newsletter" value="sim" id="newsletter" checked>
+                    <label class="form-check-label" for="newsletter">
+                        <i class="bi bi-envelope me-1"></i>Quero receber a newsletter
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="novidades" value="sim" id="novidades">
+                    <label class="form-check-label" for="novidades">
+                        <i class="bi bi-megaphone me-1"></i>Quero saber das novidades
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Contato Padrão</label>
+                <div class="radio-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contato" value="celular" id="celular" checked>
+                        <label class="form-check-label" for="celular">
+                            <i class="bi bi-phone me-1"></i>Celular
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contato" value="fixo" id="fixo">
+                        <label class="form-check-label" for="fixo">
+                            <i class="bi bi-telephone me-1"></i>Fixo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contato" value="email" id="email">
+                        <label class="form-check-label" for="email">
+                            <i class="bi bi-envelope-at me-1"></i>Email
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="contatopadrao" class="form-label">
+                    <i class="bi bi-pencil me-1"></i>Informe
+                </label>
+                <input type="text" class="form-control" id="contatopadrao" name="contatopadrao" 
+                       placeholder="Digite seu contato" maxlength="30">
+            </div>
+
+            <div class="mb-3">
+                <label for="profissao" class="form-label">
+                    <i class="bi bi-briefcase me-1"></i>Profissão
+                </label>
+                <select class="form-select" id="profissao" name="profissao">
+                    <option value="" selected>Selecione sua profissão</option>
+                    <option value="estudante">Estudante</option>
+                    <option value="analista">Analista</option>
+                    <option value="empresario">Empresário</option>
+                    <option value="dev">Desenvolvedor</option>
+                    <option value="designer">Designer</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="obs" class="form-label">
+                    <i class="bi bi-chat-dots me-1"></i>Observações
+                </label>
+                <textarea class="form-control" id="obs" name="obs" rows="4" 
+                          placeholder="Deixe aqui suas observações..."></textarea>
+            </div>
+
+            <div class="divider"></div>
+
+            <button type="submit" class="btn-submit">
+                <i class="bi bi-send"></i>Enviar Formulário
+            </button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
